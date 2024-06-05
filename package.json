@@ -1,5 +1,6 @@
 {
   "name": "ecommerce-fed",
+  "description": "Projeto final da disciplina Front-End Development, onde desenvolvemos um E-commerce utilizando as tecnologias estudadas durante o módulo. Criamos as interfaces do sistema utilizando ReactJS e Tailwind CSS, implementando diversos tipos de comunicação entre componentes, além de integrar e consumir dados de uma API externa.",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -35,15 +36,6 @@
       "last 1 safari version"
     ]
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/tadeujeronimo/ecommerce-fed.git"
-  },
-  "keywords": [],
   "author": "Tadeu Jerônimo <tadeus.jeronimo@gmail.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/tadeujeronimo/ecommerce-fed/issues"
-  },
-  "homepage": "https://github.com/tadeujeronimo/ecommerce-fed#readme"
+  "license": "MIT"
 }

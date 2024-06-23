@@ -69,8 +69,8 @@ const AddProduct = () => {
       const productsLS = JSON.parse(localStorage.getItem("products")) || [];
 
       // Verifica se o ID do novo produto é maior que todos os IDs existentes
-      const index = productsLS.findIndex((pLS) => pLS.id == product.id);
-      if (index != -1) {
+      const index = productsLS.findIndex((pLS) => pLS.id === product.id.toString());
+      if (index !== -1) {
         product.id = Math.max(...productsLS.map((pLS) => pLS.id)) + 1; // Se não, atualiza o ID do novo produto com o maior ID existente + 1
       }
 

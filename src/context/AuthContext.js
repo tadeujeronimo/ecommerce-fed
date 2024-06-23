@@ -6,6 +6,7 @@ const AuthContext = createContext();
 const AuthProvider = ({ children }) => {
   const { userLogged, userFull, loading, loginUser, logoutUser } = useAuth();
 
+  // Exibe o loading enquanto carrega os dados de autenticação
   if (loading) {
     return <h1>Loading...</h1>;
   }

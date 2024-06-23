@@ -1,26 +1,39 @@
-import "./App.css";
+import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import Navbar from "./components/Navbar";
-import Login from "./pages/Login/index";
 import { AuthProvider } from "./context/AuthContext";
 import ProtectedRoute from './routes/ProtectedRoute';
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import usePageTitle from "./hooks/usePageTitle";
+import NotFound from "./pages/NotFound";
+import routes from "./routes";
+import "./App.css";
 
-function App() {
+const App = () => {
+  usePageTitle();
   return (
-    <>
-      <AuthProvider>
-        <Navbar />
-        <Routes>
-          <Route path='/' element={
-            <ProtectedRoute>
-              <Home/>
-            </ProtectedRoute>
-          }/>
-          <Route path="/login" element={<Login />} />
-        </Routes>
-      </AuthProvider>
-    </>
+    <AuthProvider>
+      <Navbar />
+      <Routes>
+        {routes.map(({ path, component, isProtected }, index) => (
+          <Route
+            key={index}
+            path={path}
+            element={
+              isProtected ? (
+                <ProtectedRoute>
+                  {React.createElement(component)}
+                </ProtectedRoute>
+              ) : (
+                React.createElement(component)
+              )
+            }
+          />
+        ))}
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+      <Footer />
+    </AuthProvider>
   );
 }
 

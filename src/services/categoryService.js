@@ -1,7 +1,7 @@
 import api from './api';
 
 const findAllCategories = () =>
-    api.get('/categoria/findAll')
+    api.get('/products/categories')
       .then((response) => response)
       .catch(err => err);
   

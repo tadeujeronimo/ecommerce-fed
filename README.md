@@ -43,6 +43,12 @@ O Context API foi empregado para criar um fluxo de autenticação eficiente e pa
 
 Os pincipais métodos foram todos consumidos fazendo uso da Fake Store API, que fornece uma API REST online gratuita com dados pseudo-reais de comércio eletrônico ou site de compras. Porém, as operações não são persistidas no banco do serviço, o que não é problema para requisição do tipo GET. Com isso, foi implementado no CRUD de Produtos uma estratégia utilizando Local Storage. Ou seja, sempre que for realizada alguma requisição dos demais tipos (POST/PUT/DELETE), após o status de sucesso (200) retornado pela API a operação é simulada localmente no browser. Os produtos da Home são obtidos direntamente da API, sem impacto das alterações pelas alterações no Local Storage.
 
+
+## Screenshots
+
+![App Screenshot](https://raw.githubusercontent.com/tadeujeronimo/ecommerce-fed/main/public/screenshot.gif)
+
+
 ## Créditos
 
 - Este projeto faz uso da [Fake Store API](https://fakestoreapi.com/) para simular dados de produtos e usuários;
